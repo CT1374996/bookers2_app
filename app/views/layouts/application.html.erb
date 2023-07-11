@@ -6,13 +6,27 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/70b32b70bb.js" crossorigin="anonymous"></script>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <header>
-      
+      <div class="container">
+        <a href="/"><span>Bookers</span></a>
+        <% if user_signed_in? %>
+        <li><%= link_to "Home", top_path do %><i class="fas fa-home">: :before</i></li>
+        <li><%= link_to "Users", _path do %><i class="fas fa-link">: :before</i></li>
+        <li><%= link_to "Books", _path do %><i class="fas fa-user-plus">: :before</i></li>
+        <li><%= link_to "Log out", destroy_user_session_path, do %><i class="fas fa-">: :before</i></li>
+        <% else %>
+        <li><%= link_to "Home", root_path do %><i class="fas fa-home">: :before</i></li>
+        <li><%= link_to "About", about_path do %><i class="fas fa-link">: :before</i></li>
+        <li><%= link_to "Sign up", new_user_registration_path do %><i class="fas fa-user-plus">: :before</i></li>
+        <li><%= link_to "Log in", new_user_session_path do %><i class="fas fa-sign-in-alt">: :before</i></li>
+        <% end %>
+      </div>
     </header>
     <%= yield %>
   </body>
