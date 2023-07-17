@@ -1,4 +1,4 @@
-<h5>User info</h5>
+<h4>User info</h4>
 <%= image_tag @user.get_profile_image(100, 100) %>
 <table>
   <tr>
@@ -11,7 +11,7 @@
   </tr>
 </table>
 
-<h2>New Book</h2>
+<h4>New Book</h4>
 <%= form_with model: @book do |f| %>
 <h5>Title</h5>
 <%= f.text_field :title %>
@@ -19,3 +19,18 @@
 <%= f.text_area :body %>
 <%= f.submit 'Create book' %>
 <% end %>
+
+<h4>Books</h4>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Opinion</th>
+    <th colspan="2"></th>
+  </tr>
+  <tr>
+    <% @books.each do |book| %>
+    <td><%= @book.title %></td>
+    <td><%= @book.body %></td>
+    <% end %>
+  </tr>
+</table>
