@@ -1,5 +1,5 @@
 <h5>User info</h5>
-<%= image_tag profile_image.get_image %>
+<%= image_tag @user.get_profile_image(100, 100) %>
 <table>
   <tr>
     <th>name</th>
@@ -10,4 +10,12 @@
     <th><%= @user.introduction %></th>
   </tr>
 </table>
-<p><%= link_to "user profile edit", edit_user_path(user.id) %></p>
+
+<h2>New Book</h2>
+<%= form_with model: @book do |f| %>
+<h5>Title</h5>
+<%= f.text_field :title %>
+<h5>Body</h5>
+<%= f.text_area :body %>
+<%= f.submit 'Create book' %>
+<% end %>
