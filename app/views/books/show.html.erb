@@ -1,2 +1,13 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<h3>Book detail</h3>
+<table>
+  <tr>
+    <th></th>
+    <th>Title</th>
+    <th>Opinion</th>
+  </tr>
+  <tr>
+    <td><%= image_tag @profile_image.get_image %></td>
+    <td><%= @book.title %></td>
+    <td><%= @book.body %></td>
+  </tr>
+</table>
