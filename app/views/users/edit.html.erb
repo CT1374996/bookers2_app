@@ -1,7 +1,13 @@
-<%= form_with model: @user do |f| %>
-<h6>name</h6>
-<%= f.text_field :name %>
-<h6>introduction</h6>
-<%= f.text_area :introduction %>
-<%= f.submit 'Create Profile' %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col">
+        <%= form_with model: @user do |f| %>
+        <h6>name</h6>
+        <%= f.text_field :name %>
+        <h6>introduction</h6>
+        <%= f.text_area :introduction %>
+        <%= f.submit 'Create Profile' %>
+        <% end %>
+    </div>
+  </div>
+</div>
