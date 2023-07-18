@@ -1,26 +1,36 @@
-<h4>User info</h4>
-<%= image_tag @user.get_profile_image(100, 100) %>
-<table>
-  <tr>
-    <th>name</th>
-    <th><%= @user.name %></th>
-  </tr>
-  <tr>
-    <th>introduction</th>
-    <th><%= @user.introduction %></th>
-  </tr>
-</table>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <h2>User info</h2>
+      <%= image_tag @user.get_profile_image(100, 100) %>
+      <table>
+      <tr>
+      <th>name</th>
+      <th><%= @user.name %></th>
+      </tr>
+      <tr>
+      <th>introduction</th>
+      <th><%= @user.introduction %></th>
+      </tr>
+      </table>
+      <div class="row">
+        <%= link_to edit_user_path(@user.id) do %>
+        <i class="fas fa-user-cog"></i>
+        <% end %>
+      </div>
 
-<h4>New Book</h4>
-<%= form_with model: @book do |f| %>
-<h5>Title</h5>
-<%= f.text_field :title %>
-<h5>Body</h5>
-<%= f.text_area :body %>
-<%= f.submit 'Create book' %>
-<% end %>
+    <h2>New Book</h2>
+    <%= form_with model: @book do |f| %>
+    <h5>Title</h5>
+    <%= f.text_field :title %>
+    <h5>Body</h5>
+    <%= f.text_area :body %>
+    <%= f.submit 'Create book' %>
+    <% end %>
+    </div>
 
-<h4>Books</h4>
+<div class="col-md-8 offset-md-1">
+  <h2>Books</h2>
 <table>
   <tr>
     <th>Title</th>
@@ -34,3 +44,6 @@
     <% end %>
   </tr>
 </table>
+</div>
+</div>
+</div>
