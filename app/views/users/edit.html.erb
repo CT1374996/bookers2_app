@@ -1,9 +1,11 @@
 <div class="container">
   <div class="row">
-    <div class="col">
+    <div class="col-sm-12 col-md-8 col-lg-5">
         <%= form_with model: @user do |f| %>
         <h6>name</h6>
         <%= f.text_field :name %>
+        <h6>image</h6>
+        <%= image_tag book.user.get_profile_image(100, 100) %>
         <h6>introduction</h6>
         <%= f.text_area :introduction %>
         <%= f.submit 'Create Profile' %>
