@@ -7,9 +7,9 @@ class BooksController < ApplicationController
     @book = Book.new(book_params)
     @book.user_id = current_user.id
     if @book.save
-      redirect_to books_path
+      redirect_to book.id_path
     else
-      render users_path(current_user.id)
+      render user_path(current_user.id)
     end
   end
 
@@ -28,7 +28,7 @@ class BooksController < ApplicationController
   def update
     @book = Book.find(params[:id])
     book.update(book.params)
-    redirect_to books_path
+    redirect_to book.id_path
   end
 
   def destroy
