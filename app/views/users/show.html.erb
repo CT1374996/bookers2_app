@@ -1,4 +1,12 @@
 <div><%= flash[:notice] %></div>
+<% if @book.errors.any? %>
+<%= @book.errors.count %> errors prohibited this book from being saved:
+<ul>
+  <% @book.errors.full_messages.each do |message| %>
+  <li><%= message %></li>
+  <% end %>
+</ul>
+<% end %>
 <div class="container">
   <div class="row">
     <div class="col-md-3">
@@ -7,14 +15,16 @@
     </div>
 <div class="col-md-8 offset-md-1">
   <h2>Books</h2>
-<table>
+<table class="table">
   <tr>
+    <th></th>
     <th>Title</th>
     <th>Opinion</th>
     <th colspan="2"></th>
   </tr>
   <% @books.each do |book| %>
   <tr>
+    <td><%= image_tag @user.get_profile_image(70, 70) %></td>
     <td><%= link_to book_path(book.id) do %><%= book.title %><% end %></td>
     <td><%= book.body %></td>
   </tr>

@@ -1,8 +1,8 @@
-<h2>New Book</h2>
-    <%= form_with model: book, url: books_path, method: :post do |f| %>
-    <h5>Title</h5>
-    <%= f.text_field :title %>
-    <h5>Body</h5>
-    <%= f.text_area :body %>
-    <%= f.submit 'Create book' %>
-    <% end %>
+<h2>New book</h2>
+<%= form_with model: book, url: books_path, method: :post do |f| %>
+<h5>Title</h5>
+<%= f.text_field :title %>
+<h5>Body</h5>
+<%= f.text_area :body %>
+<%= f.submit 'Create book', class:"btn btn-secondary" %>
+<% end %>
