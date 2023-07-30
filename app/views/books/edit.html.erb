@@ -2,6 +2,14 @@
   <div class="row">
     <div class="col">
       <h1>Editing Book</h1>
+      <% if @book.errors.any? %>
+      <%= @book.errors.count %> errors prohibited this book from being saved:
+      <ul>
+        <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+      <% end %>
       <%= form_with model: @book do |f| %>
       <h6>Title</h6>
       <%= f.text_field :title %>
