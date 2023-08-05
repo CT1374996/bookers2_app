@@ -17,7 +17,9 @@
         <%= f.file_field :profile_image, accept: "image/*" %>
         <h6>introduction</h6>
         <%= f.text_area :introduction %>
-        <%= f.submit 'Create Profile' %>
+        <div class="row">
+        <%= f.submit 'Update User', class:"btn btn-secondary" %>
+        </div>
         <% end %>
     </div>
   </div>

@@ -9,7 +9,7 @@
       <h2>Book detail</h2>
         <table class="table">
           <tr>
-            <td><%= link_to user_path(@user.id) do %><%= image_tag @user.get_profile_image(60, 60) %><% end %><br><%= link_to @user.name, user_path(@user.id) %></td>
+            <td><%= link_to user_path(@user.id) do %><%= image_tag @user.get_profile_image(60, 60) %><br><%= link_to @user.name, user_path(@user.id) %><% end %></td>
             <td><%= @book.title %></td>
             <td><%= @book.body %></td>
             <% if @book.user == current_user %>
